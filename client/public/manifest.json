@@ -1,0 +1,8 @@
+{
+  "short_name": "DH App",
+  "name": "Dream Hunters App",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1c061a",
+  "background_color": "#37749b"
+}

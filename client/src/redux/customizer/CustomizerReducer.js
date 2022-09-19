@@ -1,0 +1,51 @@
+import { THEME_COLOR, NAVBAR_BG, SIDEBAR_BG, DIRECTION, DARK_THEME, CONNECT } from '../constants';
+
+const INIT_STATE = {
+  activeDir: 'ltr',
+  activeNavbarBg: '#0b70fb', // This can be any color,
+  activeSidebarBg: '#ffffff', // This can be any color
+  activeMode: 'dark', // This can be light or dark
+  activeTheme: 'PURPLE_THEME', // BLUE_THEME, GREEN_THEME, RED_THEME, BLACK_THEME, PURPLE_THEME, INDIGO_THEME, ORANGE_THEME
+  SidebarWidth: 240,
+  connect : false, // This can be true or false
+};
+
+const CustomizerReducer = (state = INIT_STATE, action) => {
+  switch (action.type) {
+    case NAVBAR_BG:
+      return {
+        ...state,
+        activeNavbarBg: action.payload,
+      };
+    case DARK_THEME:
+      return {
+        ...state,
+        activeMode: action.payload,
+      };
+    case SIDEBAR_BG:
+      return {
+        ...state,
+        activeSidebarBg: action.payload,
+      };
+    case THEME_COLOR:
+      return {
+        ...state,
+        activeTheme: action.payload,
+      };
+    case DIRECTION:
+      return {
+        ...state,
+        activeDir: action.payload,
+      };
+    case CONNECT:
+      return {
+        ...state,
+        connect: action.payload,
+      };
+
+    default:
+      return state;
+  }
+};
+
+export default CustomizerReducer;
